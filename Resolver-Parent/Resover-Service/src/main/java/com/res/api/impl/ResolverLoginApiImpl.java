@@ -26,6 +26,8 @@ public class ResolverLoginApiImpl implements ResolverLoginApi {
     @Override
     @GlobalErrorHandler
     public ResolverResponse userLogin(UserInfoDTO userInfoDTO) {
-        resolverLoginService.testlogin();
+        ResolverResponse resolverResponse = new ResolverResponse();
+        resolverLoginService.userLogin(resolverResponse);
+        return resolverResponse;
     }
 }
