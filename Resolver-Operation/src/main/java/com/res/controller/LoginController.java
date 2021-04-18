@@ -7,16 +7,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("aa")
+@RequestMapping("login")
 public class LoginController {
 
     @Reference
     ResolverLoginApi resolverLoginApi;
 
 
-    @RequestMapping("dd")
-    public void  aaa (){
-        resolverLoginApi.testlogin();
+    @RequestMapping("userlogin")
+    public void  userlogin (){
+
+        resolverLoginApi.userLogin();
     }
 
 

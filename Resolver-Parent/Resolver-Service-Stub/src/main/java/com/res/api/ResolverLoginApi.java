@@ -1,7 +1,9 @@
 package com.res.api;
 
+import com.res.entity.response.ResolverResponse;
+
 public interface ResolverLoginApi {
 
-    void testlogin();
+    ResolverResponse userLogin();
 
 }

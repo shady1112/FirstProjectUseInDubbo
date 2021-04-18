@@ -33,7 +33,7 @@ public class GlobalErrorHandlerAspect {
         Method method = ((MethodSignature) pjd.getSignature()).getMethod();
         Object result = null;
         try {
-            result = (ResolverResponse) pjd.proceed();
+            result =  pjd.proceed();
         } catch (Throwable e) {
             logger.error("方法名称；["+method+"] 异常 : {}",e);
             if (e.getClass().getSimpleName().equals("ResolverException")){
@@ -44,11 +44,10 @@ public class GlobalErrorHandlerAspect {
                 resolverResponse.setReturnCode("9999");
                 resolverResponse.setReturnMsg(e.getMessage());
             }
-            Object arg = pjd.getArgs()[0];
-
-            return resolverResponse;
+            result = resolverResponse;
+            return result;
         }
-        return resolverResponse;
+        return result;
     }
 
 

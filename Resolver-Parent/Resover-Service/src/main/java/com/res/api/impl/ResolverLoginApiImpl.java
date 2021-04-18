@@ -3,6 +3,8 @@ package com.res.api.impl;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.res.annotation.GlobalErrorHandler;
 import com.res.api.ResolverLoginApi;
+import com.res.entity.request.UserInfoDTO;
+import com.res.entity.response.ResolverResponse;
 import com.res.service.ResolverLoginServioce;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,7 +25,7 @@ public class ResolverLoginApiImpl implements ResolverLoginApi {
 
     @Override
     @GlobalErrorHandler
-    public void testlogin() {
+    public ResolverResponse userLogin(UserInfoDTO userInfoDTO) {
         resolverLoginService.testlogin();
     }
 }
