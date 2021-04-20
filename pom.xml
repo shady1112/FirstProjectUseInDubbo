@@ -10,7 +10,6 @@
 	<modules>
 		<module>Resolver-Parent</module>
 		<module>Resolver-Operation</module>
-		<module>Resolver-parent</module>
 	</modules>
 	<build>
 		<plugins>

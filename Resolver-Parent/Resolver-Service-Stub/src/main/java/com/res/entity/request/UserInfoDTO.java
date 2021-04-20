@@ -1,13 +1,18 @@
 package com.res.entity.request;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import java.util.Date;
 
 public class UserInfoDTO {
 
+    @NotBlank
     private String loginName;
 
+    @NotBlank
     private String password;
 
+    @NotBlank
     private Date lastlogin;
 
     public String getLoginName() {
