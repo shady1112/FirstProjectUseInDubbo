@@ -34,7 +34,7 @@ public class ResolverLoginApiImpl implements ResolverLoginApi {
             resolverResponse.setReturnCode(e.getReturnCode());
             resolverResponse.setReturnMsg(e.getReturnMsg());
         } catch (Exception e){
-
+            logger.error("登陆异常！{}",e);
         }
         return resolverResponse;
     }

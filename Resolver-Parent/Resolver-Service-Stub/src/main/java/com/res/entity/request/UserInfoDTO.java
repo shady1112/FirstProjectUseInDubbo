@@ -1,26 +1,26 @@
 package com.res.entity.request;
 
-import org.hibernate.validator.constraints.NotBlank;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class UserInfoDTO {
+public class UserInfoDTO implements Serializable {
 
-    @NotBlank
-    private String loginName;
 
-    @NotBlank
+    private String account;
+
+
     private String password;
 
-    @NotBlank
+
     private Date lastlogin;
 
-    public String getLoginName() {
-        return loginName;
+    public String getAccount() {
+        return account;
     }
 
-    public void setLoginName(String loginName) {
-        this.loginName = loginName;
+    public void setAccount(String account) {
+        this.account = account;
     }
 
     public String getPassword() {
@@ -39,8 +39,8 @@ public class UserInfoDTO {
         this.lastlogin = lastlogin;
     }
 
-    public UserInfoDTO(String loginName, String password, Date lastlogin) {
-        this.loginName = loginName;
+    public UserInfoDTO(String account, String password, Date lastlogin) {
+        this.account = account;
         this.password = password;
         this.lastlogin = lastlogin;
     }
@@ -48,7 +48,7 @@ public class UserInfoDTO {
     @Override
     public String toString() {
         return "UserInfoDTO{" +
-                "loginName='" + loginName + '\'' +
+                "account='" + account + '\'' +
                 ", password='" + password + '\'' +
                 ", lastlogin=" + lastlogin +
                 '}';

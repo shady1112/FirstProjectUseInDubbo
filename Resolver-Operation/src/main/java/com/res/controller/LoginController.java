@@ -26,17 +26,17 @@ public class LoginController {
     RedisUtil redisUtil;
 
     @Validated
-    @RequestMapping("userlogin")
+    @RequestMapping("userLogin")
     public ResolverResponse  userlogin (UserInfoDTO userInfoDTO){
         ResolverResponse resolverResponse = new ResolverResponse();
         //查询缓存中是否在该ID
-        String loginName = (String) redisUtil.get(userInfoDTO.getLoginName());
-        if (StringUtils.isNoneBlank(loginName)){
+        String loginName = (String) redisUtil.get(userInfoDTO.getAccount());
+        if (StringUtils.isNotBlank(loginName)){
             return resolverResponse;
         }
          resolverResponse = resolverLoginApi.userLogin(userInfoDTO);
         if (resolverResponse.getReturnCode().equals("0000")){
-            redisUtil.set( userInfoDTO.getLoginName(),"loginName", 30L, TimeUnit.MINUTES);
+            redisUtil.set( userInfoDTO.getAccount(),"loginName", 30L, TimeUnit.MINUTES);
         }
         return resolverResponse ;
 

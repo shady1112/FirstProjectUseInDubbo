@@ -1,6 +1,8 @@
 package com.res.entity.response;
 
-public class ResolverResponse {
+import java.io.Serializable;
+
+public class ResolverResponse implements Serializable {
 
     private String returnCode = "0000";
     private String returnMsg = "SUCCESS";
