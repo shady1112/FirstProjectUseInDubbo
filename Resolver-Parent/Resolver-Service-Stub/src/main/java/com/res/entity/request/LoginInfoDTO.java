@@ -4,7 +4,7 @@ package com.res.entity.request;
 import java.io.Serializable;
 import java.util.Date;
 
-public class UserInfoDTO implements Serializable {
+public class LoginInfoDTO implements Serializable {
 
 
     private String account;
@@ -39,7 +39,7 @@ public class UserInfoDTO implements Serializable {
         this.lastlogin = lastlogin;
     }
 
-    public UserInfoDTO(String account, String password, Date lastlogin) {
+    public LoginInfoDTO(String account, String password, Date lastlogin) {
         this.account = account;
         this.password = password;
         this.lastlogin = lastlogin;
