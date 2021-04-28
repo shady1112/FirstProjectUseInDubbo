@@ -1,8 +1,8 @@
 package com.res.service;
 
 
-import com.res.entity.request.UserInfoDTO;
+import com.res.entity.request.LoginInfoDTO;
 
 public interface ResolverLoginService {
-     void userLogin(UserInfoDTO userInfoDTO);
+     void userLogin(LoginInfoDTO loginInfoDTO);
 }
